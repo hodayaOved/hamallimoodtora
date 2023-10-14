@@ -1,0 +1,23 @@
+<p>gmara-page works!</p>
+<button class="button-33" role="button">
+    דף גמרא
+</button>
+
+<button class="button-33" role="button">
+    מסכת
+</button>
+
+<button class="button-33" role="button">
+    פרק
+</button>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Search Items" class="search-input" />
+
+<ul class="item-list">
+    <li *ngFor="let item of filteredItems" class="list-item" (click)="toggleChapters(item)">
+      {{ item.heBook }}
+      <ul *ngIf="item.showChapters">
+        <li *ngFor="let chapter of item.chapters">{{ chapter }}</li>
+      </ul>
+    </li>
+  </ul>
+  
